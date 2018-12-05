@@ -30,6 +30,19 @@ This paper had five objectives:
 ![](./Figures/Iowa_Captives/Figure2_A.png)
 
 ### Figure 3 - B73 Network Diagram
+
+In Figure 3 of the paper, the authors represent a network diagram using the inbred line B73 as reference and the 51 closest related inbred lines with values of IBS ≥ 97 %. The network of relationships obtained using GBS data combined with pedigree information,
+provides a powerful tool to identify accessions that may have been misclassified, select best sources for multiplication/distribution, eliminate duplications, select core collections, add or recommend new experimental entries and in theory, to assess genetic profile changes over successive regenerations which could be another quality-assurance measure.
+
+We replicated this analysis and were able to obtain almost the same graph using the same software that they used (Gephi-0.9.2) which is an open source network visualization platform. Additionally we tried to reproduce the same graph using R studio installing the packages “igraph”. To do this we used the graph_from_data_frame() function, which takes two data frames: d and vertices.
+-	d describes the edges of the network. 
+-	vertices start with a column of node IDs. Any following columns are interpreted as node attributes like Inbred Lines and ibs values.
+
+We generated these two data frames with the information that was provided on additional file 2 (13059_2013_3103_MOESM2_ESM) that can be found in the  /Data/additional_materials folder of this repository. This file contains the distribution of the IBS relationships and the 10 closest neighbors for each unique inbred line. However, since this graph was created using the inbred line B73 and the closest related inbred lines with IBS values ≥ 97 %, we extracted these lines manually using Excel functions and then the file “IBS relationships for B73.csv” was generated and is also provided in the /Data/additional_materials folder of this repository.
+
+Once we created these two files, the data was read into Gephi where we created the figure using the different types of visualization of the software. Additionally we recreated the figure in R studio using the packages “igraph”. As we can see in our Figure, we got very similar results even when the authors do not explain the procedure that they follow, they just showed the name of the software that they used.
+
+
 ![](./Figures/Romay_et_al/Fig3.png)
 
 
